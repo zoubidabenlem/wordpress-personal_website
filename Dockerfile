@@ -1,11 +1,16 @@
 # Use the official WordPress image as the base image
 FROM wordpress:latest
 
-# Set environment variables
-ENV WORDPRESS_DB_HOST=your_db_host
-ENV WORDPRESS_DB_USER=your_db_user
-ENV WORDPRESS_DB_PASSWORD=your_db_password
-ENV WORDPRESS_DB_NAME=your_db_name
+# Install the SQLite integration plugin
+RUN curl -O https://downloads.wordpress.org/plugin/sqlite-integration.1.8.1.zip && \
+    unzip sqlite-integration.1.8.1.zip -d /usr/src/wordpress/wp-content/plugins/
+
+# Set environment variables to use SQLite
+ENV WORDPRESS_DB_TYPE=sqlite
+ENV WORDPRESS_DB_NAME=/var/www/html/wp-content/database/wordpress.db
+
+# Create the database directory
+RUN mkdir -p /var/www/html/wp-content/database
 
 # Copy the content of your WordPress site into the container
 COPY . /var/www/html/
