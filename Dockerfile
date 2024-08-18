@@ -1,9 +1,8 @@
 # Use the official WordPress image as the base image
 FROM wordpress:latest
+# Copy the SQLite integration plugin from the local directory to the Docker image
+COPY sqlite-integration /usr/src/wordpress/wp-content/plugins/sqlite-integration
 
-# Install the SQLite integration plugin
-RUN curl -O https://downloads.wordpress.org/plugin/sqlite-integration.1.8.1.zip && \
-    unzip sqlite-integration.1.8.1.zip -d /usr/src/wordpress/wp-content/plugins/
 
 # Set environment variables to use SQLite
 ENV WORDPRESS_DB_TYPE=sqlite
