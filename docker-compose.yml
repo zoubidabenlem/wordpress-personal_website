@@ -20,7 +20,7 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: your_root_password
+      MYSQL_ROOT_PASSWORD: Ss88047062*101
       MYSQL_DATABASE: wp
       MYSQL_USER: zubizu
       MYSQL_PASSWORD: Ss88047062*101

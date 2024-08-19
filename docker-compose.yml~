@@ -25,4 +25,4 @@ services:
       MYSQL_USER: zubizu
       MYSQL_PASSWORD: Ss88047062*101
     ports:
-      - "3307:3306"
+      - "3308:3306"
