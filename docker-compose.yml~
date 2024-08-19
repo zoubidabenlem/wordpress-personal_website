@@ -1,0 +1,27 @@
+on: '3.8'
+
+services:
+    wordpress:
+      image: wordpress:latest
+      environment:
+        WORDPRESS_DB_NAME: wp
+        WORDPRESS_DB_USER: zubizu
+        WORDPRESS_DB_PASSWORD: Ss88047062*101
+        WORDPRESS_DB_HOST: mysql
+        WORDPRESS_DB_PORT: 3306
+        WP_DEBUG: 'true'
+      volumes:
+        - ./wordpress:/var/www/html
+      ports:
+        - "8080:80"
+      depends_on:
+        - mysql
+      mysql:
+        image: mysql:8.0
+        environment:
+          MYSQL_ROOT_PASSWORD: your_root_password
+          MYSQL_DATABASE: wp
+          MYSQL_USER: zubizu
+          MYSQL_PASSWORD: Ss88047062*101
+        ports:
+            - "3306:3306"
