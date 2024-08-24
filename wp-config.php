@@ -29,7 +29,7 @@ define( 'DB_USER', 'zubizu' );
 define( 'DB_PASSWORD', 'Ss88047062*101' );
 
 /** Database hostname */
-define( 'DB_HOST', 'mysql:3306'); 
+define( 'DB_HOST', 'localhost'); 
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
